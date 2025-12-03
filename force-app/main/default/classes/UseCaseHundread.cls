@@ -1,5 +1,6 @@
 public with sharing class UseCaseHundread {
     public static void triggerHandler(List<Opportunity> oppList) {
+        
         Set<Id> accountIds = new Set<Id>();
         for(Opportunity opp : oppList){
             if(opp.AccountId != null){
