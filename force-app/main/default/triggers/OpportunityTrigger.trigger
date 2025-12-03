@@ -7,4 +7,8 @@ trigger OpportunityTrigger on Opportunity (before insert, before update) {
     if(Trigger.isInsert && Trigger.isBefore){
         UseCaseNintyNine.triggerHandler(Trigger.new);
     }
+
+    if(Trigger.isBefore &&(Trigger.isInsert || Trigger.isUpdate)){
+        UseCaseNintyEight.triggerHandler(Trigger.new);
+    }
 }
