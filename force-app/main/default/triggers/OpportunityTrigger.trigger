@@ -1,4 +1,4 @@
-trigger OpportunityTrigger on Opportunity (before insert, before update) {
+trigger OpportunityTrigger on Opportunity (before insert, before update, after update) {
 
     if(Trigger.isBefore && (Trigger.isInsert || Trigger.isUpdate)){
         UseCaseHundread.triggerHandler(Trigger.new);
@@ -14,5 +14,8 @@ trigger OpportunityTrigger on Opportunity (before insert, before update) {
     
     if(Trigger.isBefore &&(Trigger.isInsert || Trigger.isUpdate)){
         UseCaseNintySeven.triggerHandler(Trigger.new);
+    }
+    if(Trigger.isAfter && Trigger.isUpdate){
+        UseCaseNintySix.triggerHandler(Trigger.new, Trigger.oldMap);
     }
 }
