@@ -13,6 +13,7 @@ public with sharing class UseCaseNintyFive {
         if(emailset.isEmpty() || accountIds.isEmpty()){
             return;
         }
+        List<Contact> existingCnt = [select Id, Email from Contact where Email in :emailset and AccountId in :accountIds]; 
             }
         }
     
