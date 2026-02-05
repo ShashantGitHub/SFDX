@@ -22,6 +22,9 @@ trigger OpportunityTrigger on Opportunity (before insert, before update, after u
     // if(Trigger.isBefore && Trigger.isDelete){
     //     UseCaseOne.triggerHandler(Trigger.old);
     // }
+    // if(Trigger.isBefore && Trigger.isInsert){
+    //     UseCaseSeven.triggerHandler(Trigger.new);
+    // }
     
 
 }
