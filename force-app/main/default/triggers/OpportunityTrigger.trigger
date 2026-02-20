@@ -19,12 +19,17 @@ trigger OpportunityTrigger on Opportunity (before insert, before update, after u
     //     UseCaseNintySix.triggerHandler(Trigger.new, Trigger.oldMap);
     // }
 
-    // if(Trigger.isBefore && Trigger.isDelete){
-    //     UseCaseOne.triggerHandler(Trigger.old);
-    // }
+   //if (Trigger.isBefore && Trigger.isUpdate) {
+        //UseCaseOne.triggerHandler(Trigger.new, Trigger.oldMap);
+       // }
     // if(Trigger.isBefore && Trigger.isInsert){
     //     UseCaseSeven.triggerHandler(Trigger.new);
-    // }
-    
 
+ 
+    if (Trigger.isAfter && Trigger.isUpdate) {
+        AccountUpdateOpportunity.triggerHandler(
+            Trigger.new,
+            Trigger.oldMap
+        );
+}
 }
